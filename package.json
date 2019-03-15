@@ -1,0 +1,29 @@
+{
+  "name": "Space-Overflow",
+  "version": "0.1.0",
+  "description": "A web gaming application for Space Overflow",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "pretest": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jpan68/SpaceOverflow_2340_web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpan68/SpaceOverflow_2340_web/issues"
+  },
+  "homepage": "https://github.com/jpan68/SpaceOverflow_2340_web#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
