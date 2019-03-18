@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./layout/header') %>
+  <body>
+    <%- include('./layout/top-nav') %>
+
+    <section class="hero-wrap js-fullheight" style="background-image: url('images/space_background.jpeg');">
+      <div class="overlay"></div>
+      <div class="container game_display">
+        <div id="main-container" class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+           <%- body %>
+        </div>
+      </div>
+    </section>
+
+    <%- include('./layout/footer') %>
+    
+  </body>
+</html>

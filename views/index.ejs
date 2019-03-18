@@ -1,0 +1,61 @@
+<form id="game-setup" action="/next_pg" method="POST">
+  <span class="form-input-name">Your Commander Name</span><br>
+  <input type="text" name="name"><br><br>
+
+  <span class="form-input-name">Difficulty</span><br>
+  <select name="difficulty">
+    <option value="beginner">Beginner</option>
+    <option value="easy">Easy</option>
+    <option value="normal">Normal</option>
+    <option value="hard">Hard</option>
+    <option value="impossible">Impossible</option>
+  </select><br><br>
+
+  <span id="allocate" class="form-input-name">Allocate <span id="remaining-pts">15</span> more skill points:<br></span>
+  <span class="option">Pilot:</span>
+  <input type="number" name="pilot" value="0" min="0"><br>
+  <span class="option">Fighter:</span>
+  <input type="number" name="fighter" value="0" min="0"><br>
+  <span class="option">Trader:</span>
+  <input type="number" name="trader" value="0" min="0"><br>
+  <span class="option">Engineer:</span>
+  <input type="number" name="engineer" value="0" min="0"><br>
+  <br>
+
+  <input type="submit" value="Submit">
+</form>
+
+
+<script>
+$(document).ready(function() {
+  // submit game setup form if input is valid, else display error msg
+  $('#game-setup').submit(function(ev) {
+    ev.preventDefault();
+    $('#remaining-pts').removeClass('error');
+    $('.error').remove();
+
+    const remaining_pts = parseInt($('#remaining-pts').html());
+    if (remaining_pts !== 0) {
+      // display error msg
+      $('#remaining-pts').addClass('error');
+      $('#allocate').append('<span class="error">Remaining skill points to allocate must be 0.</span>');
+    } else {
+      $('.option').removeClass('error');
+      $(this)[0].submit();
+    }
+  });
+
+
+  // event listens for changes in skill points allocation, and updates display
+  $(':input[type="number"]').change(function(ev) {
+    let pts_allocated = 0;
+    $(':input[type="number"]').each(function(index) {
+      pts_allocated += parseInt(this.value);
+      console.log(pts_allocated);
+    });
+
+    pts_remaining = 15 - pts_allocated;
+    $('#remaining-pts').html(pts_remaining);
+  });
+});
+</script>
