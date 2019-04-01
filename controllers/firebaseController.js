@@ -26,6 +26,8 @@ exports.createPlayer = (
 	        figherPts : fighter_pts,
 	        traderPts : trader_pts,
 	        engineerPts : engineer_pts,
+	        credits : 1000,
+	        spaceshipType : "Gnat", 
 		})
 		.then(() => {
 			callback(null);
