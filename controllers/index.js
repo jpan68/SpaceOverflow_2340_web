@@ -4,6 +4,7 @@ const router = express.Router();
 const homeController = require('./homeController');
 
 router.get('/', homeController.index);
-router.post('/next_pg', homeController.next_pg);
+router.get('/next', homeController.next);
+router.post('/create-player', homeController.createPlayer);
 
 module.exports = router;

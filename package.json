@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/jpan68/SpaceOverflow_2340_web#readme",
   "dependencies": {
+    "dotenv": "^7.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-partials": "^0.3.0",
+    "firebase": "^5.9.2",
     "path": "^0.12.7"
   },
   "devDependencies": {
