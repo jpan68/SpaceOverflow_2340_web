@@ -1,4 +1,4 @@
-<form id="game-setup" action="/next_pg" method="POST">
+<form id="game-setup" action="/create-player" method="POST">
   <span class="form-input-name">Your Commander Name</span><br>
   <input type="text" name="name"><br><br>
 
@@ -11,7 +11,7 @@
     <option value="impossible">Impossible</option>
   </select><br><br>
 
-  <span id="allocate" class="form-input-name">Allocate <span id="remaining-pts">15</span> more skill points:<br></span>
+  <span id="allocate" class="form-input-name">Allocate <span id="remaining-pts">16</span> more skill points:<br></span>
   <span class="option">Pilot:</span>
   <input type="number" name="pilot" value="0" min="0"><br>
   <span class="option">Fighter:</span>
@@ -51,11 +51,11 @@ $(document).ready(function() {
     let pts_allocated = 0;
     $(':input[type="number"]').each(function(index) {
       pts_allocated += parseInt(this.value);
-      console.log(pts_allocated);
     });
 
-    pts_remaining = 15 - pts_allocated;
+    pts_remaining = 16 - pts_allocated;
     $('#remaining-pts').html(pts_remaining);
   });
+
 });
 </script>
