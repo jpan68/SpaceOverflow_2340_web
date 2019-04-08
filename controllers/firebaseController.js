@@ -35,4 +35,12 @@ exports.createPlayer = (
 		.catch((err) => {
 			callback(err);
 		});
-}
+};
+
+exports.createPlanet = (planet, callback) => {
+	return firebase.database().ref('/universe').push().set(planet).then(() => {
+		callback(null);
+	}).catch((err) => {
+		callback(err);
+	});
+};

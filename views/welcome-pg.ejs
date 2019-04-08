@@ -1,0 +1,15 @@
+<div style="padding-top: 100px">
+    <h1 class="game_display">Welcome to the Universe!</h1>
+    <h3>Planet Info:</h3>
+    <ol>
+    <% universe.forEach(function(planet){ %>
+        <li><%= planet.name %></li>
+        <ul>
+            <li>Location: (<%= planet.coordinates.x%>, <%= planet.coordinates.y%>)</li>
+            <li>Tech Level: <%= planet.techLevel%></li>
+            <li>Resource: <%= planet.resources%></li>
+        </ul>
+        <% }) %>
+    </ol>
+</div>
+
